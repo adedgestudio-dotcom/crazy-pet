@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Fredoka+One&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Font families */
+  --font-family-sans: "Nunito", sans-serif;
+  --font-family-display: "Fredoka One", cursive;
+
+  /* Custom colors */
+  --color-orange-50: #fff7ed;
+  --color-orange-100: #ffedd5;
+  --color-orange-200: #fed7aa;
+  --color-orange-300: #fdba74;
+  --color-orange-400: #fb923c;
+  --color-orange-500: #ff6b2c;
+  --color-orange-600: #ea580c;
+  --color-orange-700: #c2410c;
+  --color-orange-800: #9a3412;
+  --color-orange-900: #7c2d12;
+  --color-orange-950: #431407;
+}
+
+:root {
+  --orange: #ff6b2c;
+  --amber: #ffb347;
+  --cream: #fff8f0;
+  --brown: #3d2b1f;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background: #fff8f0;
+  color: #3d2b1f;
+}
+
+.font-display {
+  font-family: "Fredoka One", cursive;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes wag {
+  0%,
+  100% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+.animate-wag {
+  animation: wag 0.6s ease-in-out infinite;
+}
+.chatbot-shadow {
+  box-shadow: 0 20px 60px rgba(255, 107, 44, 0.2), 0 4px 20px rgba(0, 0, 0, 0.1);
+}
