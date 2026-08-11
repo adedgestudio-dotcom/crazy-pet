@@ -6,8 +6,8 @@
   --font-family-sans: "Nunito", sans-serif;
   --font-family-display: "Fredoka One", cursive;
 
-  /* Custom colors */
-  --color-orange-50: #fff7ed;
+  /* Custom colors with more vibrant shades */
+  --color-orange-50: #fff8f0;
   --color-orange-100: #ffedd5;
   --color-orange-200: #fed7aa;
   --color-orange-300: #fdba74;
@@ -23,7 +23,7 @@
 :root {
   --orange: #ff6b2c;
   --amber: #ffb347;
-  --cream: #fff8f0;
+  --cream: #fffbf5;
   --brown: #3d2b1f;
 }
 
@@ -33,12 +33,13 @@
 
 body {
   font-family: "Nunito", sans-serif;
-  background: #fff8f0;
+  background: linear-gradient(135deg, #fffbf5 0%, #fff8f0 100%);
   color: #3d2b1f;
 }
 
 .font-display {
   font-family: "Fredoka One", cursive;
+  letter-spacing: -0.02em;
 }
 
 @keyframes float {
@@ -59,6 +60,47 @@ body {
     transform: rotate(8deg);
   }
 }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
@@ -66,6 +108,124 @@ body {
 .animate-wag {
   animation: wag 0.6s ease-in-out infinite;
 }
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out;
+}
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
 .chatbot-shadow {
   box-shadow: 0 20px 60px rgba(255, 107, 44, 0.2), 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Click animations for all buttons and links */
+a,
+button {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:active,
+button:active {
+  transform: scale(0.95);
+}
+
+/* Enhanced button click effect */
+.btn-click {
+  transition: all 0.2s ease;
+}
+
+.btn-click:active {
+  transform: scale(0.92);
+}
+
+/* Additional beautiful animations */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 107, 44, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 107, 44, 0.6);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 1000px 100%;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #ff6b2c 0%, #ffb347 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced shadows */
+.shadow-orange-soft {
+  box-shadow: 0 10px 40px rgba(255, 107, 44, 0.15);
+}
+
+.shadow-orange-medium {
+  box-shadow: 0 15px 50px rgba(255, 107, 44, 0.25);
+}
+
+.shadow-orange-strong {
+  box-shadow: 0 20px 60px rgba(255, 107, 44, 0.35);
+}
+
+/* Gradient backgrounds */
+.bg-gradient-warm {
+  background: linear-gradient(135deg, #fff8f0 0%, #ffedd5 100%);
+}
+
+.bg-gradient-orange {
+  background: linear-gradient(135deg, #ff6b2c 0%, #ffb347 100%);
 }

@@ -52,7 +52,7 @@ export default function WhatsAppBot() {
     if (node.action === "whatsapp") {
       setTimeout(() => {
         window.open(
-          `https://wa.me/${STORE.whatsapp}?text=Hi! I found your website 🐾`,
+          `https://wa.me/916382469764?text=Hi! I found your website 🐾`,
           "_blank"
         );
         setMessages((prev) => [...prev, { from: "bot", text: node.message }]);

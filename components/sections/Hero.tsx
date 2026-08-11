@@ -18,9 +18,16 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-linear-to-br from-orange-50 via-amber-50 to-yellow-50">
-      {/* Decorative blobs */}
-      <div className="absolute top-20 right-0 w-96 h-96 bg-orange-200 rounded-full blur-3xl opacity-30 z-0" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-amber-200 rounded-full blur-3xl opacity-40 z-0" />
+      {/* Decorative blobs with enhanced glow */}
+      <div className="absolute top-20 right-0 w-96 md:w-125 h-96 md:h-125 bg-orange-200 rounded-full blur-3xl opacity-40 animate-pulse z-0" />
+      <div
+        className="absolute bottom-0 left-0 w-72 md:w-96 h-72 md:h-96 bg-amber-200 rounded-full blur-3xl opacity-50 animate-pulse z-0"
+        style={{ animationDelay: "1s" }}
+      />
+      <div
+        className="absolute top-1/2 left-1/3 w-48 md:w-64 h-48 md:h-64 bg-pink-200 rounded-full blur-3xl opacity-30 animate-pulse z-0"
+        style={{ animationDelay: "2s" }}
+      />
 
       {/* Paw prints bg */}
       <div className="absolute inset-0 opacity-5 text-6xl select-none pointer-events-none overflow-hidden">
@@ -45,10 +52,15 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* Rating badge */}
-          <div className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-md mb-6">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-md mb-6 hover:shadow-lg transition-shadow"
+          >
             <div className="flex">
               {[...Array(5)].map((_, i) => (
                 <Star
@@ -61,33 +73,50 @@ export default function Hero() {
             <span className="text-sm font-700 text-amber-900">
               {STORE.rating} · {STORE.reviews} Reviews
             </span>
-          </div>
+          </motion.div>
 
-          <h1 className="font-display text-6xl md:text-7xl leading-tight text-amber-950 mb-4">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="font-display text-6xl md:text-7xl leading-tight text-amber-950 mb-4"
+          >
             Everything
             <br />
             <span className="text-orange-500">For Pets.</span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-lg text-amber-800 leading-relaxed mb-8 max-w-md">
-            Chennai&apos;s most loved pet store in Anna Nagar. Grooming,
-            boarding, puppies, food and accessories — all under one roof. 🐾
-          </p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-lg text-amber-800 leading-relaxed mb-8 max-w-md"
+          >
+            Your neighborhood&apos;s most trusted pet store. Grooming, boarding,
+            puppies, food and accessories — all under one roof. 🐾
+          </motion.p>
 
-          <div className="flex flex-wrap gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="flex flex-wrap gap-4"
+          >
             <a
               href={`tel:${STORE.phone1.replace(/\s/g, "")}`}
-              className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-700 text-base transition-all hover:scale-105 shadow-lg shadow-orange-200"
+              className="flex items-center gap-2 bg-linear-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-3 rounded-full font-700 text-base transition-all duration-300 hover:scale-105 hover:shadow-orange-strong shadow-orange-medium active:scale-95 relative overflow-hidden group"
             >
-              <Phone size={18} /> Call Us Now
+              <Phone size={18} className="relative z-10" />
+              <span className="relative z-10">Call Us Now</span>
+              <div className="absolute inset-0 bg-white/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
             </a>
             <a
               href="#services"
-              className="flex items-center gap-2 bg-white hover:bg-orange-50 text-orange-500 border-2 border-orange-200 px-6 py-3 rounded-full font-700 text-base transition-all hover:scale-105"
+              className="flex items-center gap-2 bg-white hover:bg-orange-50 text-orange-500 border-2 border-orange-200 hover:border-orange-300 px-6 py-3 rounded-full font-700 text-base transition-all duration-300 hover:scale-105 hover:shadow-lg shadow-md active:scale-95"
             >
               Our Services ↓
             </a>
-          </div>
+          </motion.div>
 
           {/* Address */}
           <div className="flex items-start gap-2 mt-8 text-sm text-amber-700">
@@ -96,7 +125,7 @@ export default function Hero() {
           </div>
 
           <div className="mt-2 text-sm text-green-600 font-700">
-            ● Open now · Closes 10 PM
+            ● Open now · Closes 8 PM
           </div>
         </motion.div>
 
@@ -130,19 +159,34 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Floating badges */}
-            <div className="absolute -top-4 -right-4 md:-right-6 bg-white rounded-2xl shadow-lg px-4 py-3 text-center hover:scale-110 transition-transform">
+            {/* Floating badges with animations */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 0.5, delay: 1 }}
+              className="absolute -top-4 -right-4 md:-right-6 bg-white rounded-2xl shadow-lg px-4 py-3 text-center hover:scale-110 transition-all duration-300 cursor-pointer active:scale-95"
+            >
               <div className="text-2xl">✂️</div>
               <div className="text-xs font-700 text-amber-900">Grooming</div>
-            </div>
-            <div className="absolute -bottom-4 -left-4 md:-left-6 bg-white rounded-2xl shadow-lg px-4 py-3 text-center hover:scale-110 transition-transform">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5, rotate: 20 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 0.5, delay: 1.2 }}
+              className="absolute -bottom-4 -left-4 md:-left-6 bg-white rounded-2xl shadow-lg px-4 py-3 text-center hover:scale-110 transition-all duration-300 cursor-pointer active:scale-95"
+            >
               <div className="text-2xl">🐾</div>
               <div className="text-xs font-700 text-amber-900">Boarding</div>
-            </div>
-            <div className="absolute top-1/2 -right-6 md:-right-10 bg-orange-500 text-white rounded-2xl shadow-lg px-3 py-2 text-center hover:scale-110 transition-transform -translate-y-1/2">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 1.4 }}
+              className="absolute top-1/2 -right-6 md:-right-10 bg-orange-500 text-white rounded-2xl shadow-lg px-3 py-2 text-center hover:scale-110 transition-all duration-300 -translate-y-1/2 cursor-pointer active:scale-95"
+            >
               <div className="text-xl">🐱</div>
               <div className="text-xs font-700">Cats too!</div>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>

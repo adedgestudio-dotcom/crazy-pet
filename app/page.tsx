@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
+import PetShowcase from "@/components/sections/PetShowcase";
 import Services from "@/components/sections/Services";
 import About from "@/components/sections/About";
 import Gallery from "@/components/sections/Gallery";
@@ -13,6 +14,7 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
+      <PetShowcase />
       <Services />
       <About />
       <Gallery />

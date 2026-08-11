@@ -13,17 +13,23 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const links = ["Services", "About", "Gallery", "Reviews", "Contact"];
+  const links = ["Home", "Services", "About", "Gallery", "Reviews", "Contact"];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? "bg-white/95 backdrop-blur-md shadow-md py-3" : "bg-transparent py-5"
-    }`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-orange-100 py-3"
+          : "bg-transparent py-5"
+      }`}
+    >
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
           <span className="text-2xl animate-wag inline-block">🐾</span>
-          <span className="font-display text-2xl text-orange-500">{STORE.name}</span>
+          <span className="font-display text-2xl text-orange-500">
+            {STORE.name}
+          </span>
         </div>
 
         {/* Desktop links */}
@@ -31,8 +37,8 @@ export default function Navbar() {
           {links.map((l) => (
             <a
               key={l}
-              href={`#${l.toLowerCase()}`}
-              className="text-sm font-700 text-amber-900 hover:text-orange-500 transition-colors"
+              href={l === "Home" ? "#" : `#${l.toLowerCase()}`}
+              className="text-sm font-700 text-amber-900 hover:text-orange-500 transition-colors duration-300"
             >
               {l}
             </a>
@@ -42,10 +48,10 @@ export default function Navbar() {
         {/* CTA */}
         <a
           href={`tel:${STORE.phone1.replace(/\s/g, "")}`}
-          className="hidden md:flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full text-sm font-700 transition-all hover:scale-105"
+          className="hidden md:flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full text-sm font-700 transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
         >
           <Phone size={14} />
-          {STORE.phone1}
+          Call Us - {STORE.phone1}
         </a>
 
         {/* Mobile menu button */}
@@ -63,7 +69,7 @@ export default function Navbar() {
           {links.map((l) => (
             <a
               key={l}
-              href={`#${l.toLowerCase()}`}
+              href={l === "Home" ? "#" : `#${l.toLowerCase()}`}
               className="text-sm font-700 text-amber-900 hover:text-orange-500"
               onClick={() => setMenuOpen(false)}
             >

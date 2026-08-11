@@ -16,7 +16,7 @@ export default function Footer() {
             </div>
             <p className="text-sm text-amber-300 leading-relaxed">
               Everything for pets — grooming, boarding, food, accessories and
-              adorable puppies. Chennai&apos;s most loved pet store.
+              adorable puppies. Your trusted neighborhood pet store.
             </p>
           </div>
 
@@ -30,12 +30,14 @@ export default function Footer() {
               >
                 <Phone size={14} /> {STORE.phone1}
               </a>
-              <a
-                href={`tel:${STORE.phone2}`}
-                className="flex items-center gap-2 hover:text-orange-400 transition-colors"
-              >
-                <Phone size={14} /> {STORE.phone2}
-              </a>
+              {STORE.phone2 && (
+                <a
+                  href={`tel:${STORE.phone2}`}
+                  className="flex items-center gap-2 hover:text-orange-400 transition-colors"
+                >
+                  <Phone size={14} /> {STORE.phone2}
+                </a>
+              )}
               <div className="flex items-start gap-2">
                 <MapPin size={14} className="mt-0.5 shrink-0" />
                 <span>{STORE.address}</span>
@@ -68,8 +70,7 @@ export default function Footer() {
 
         <div className="border-t border-amber-800 pt-5 text-center text-xs text-amber-500">
           <div className="mb-4">
-            © {new Date().getFullYear()} {STORE.name} · Est. {STORE.established}{" "}
-            · Anna Nagar, Chennai
+            © {new Date().getFullYear()} {STORE.name} · Est. {STORE.established}
           </div>
           <div className="flex items-center justify-center gap-2">
             <span className="text-amber-600">Crafted with</span>
