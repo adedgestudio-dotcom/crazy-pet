@@ -50,7 +50,7 @@ export default function Services() {
 
           {/* CTA card */}
           <motion.a
-            href="https://wa.me/916382469764"
+            href="https://wa.me/15551234567"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 30 }}

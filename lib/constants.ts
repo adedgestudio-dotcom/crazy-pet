@@ -2,9 +2,9 @@ export const STORE = {
   name: "Crazy Pet'z Store",
   tagline: "Everything For Pets",
   established: "2018",
-  phone1: "6382469764",
+  phone1: "+1 (555) 123-4567",
   phone2: "",
-  whatsapp: "916382469764",
+  whatsapp: "15551234567",
   address: "123 Pet Paradise Lane, Downtown District, Your City - 12345",
   hours: "Open daily · 9am – 8pm",
   rating: 4.9,
@@ -100,8 +100,8 @@ export const CHATBOT_FLOWS = {
   },
   "📞 Call Now": {
     message:
-      "You can reach us at:\n📱 (555) 123-4567\n📱 (555) 987-6543\n\nOr just tap below to call directly!",
-    options: ["📞 (555) 123-4567", "⬅️ Back to Menu"],
+      "You can reach us at:\n📱 +1 (555) 123-4567\n\nOr just tap below to call directly!",
+    options: ["📞 +1 (555) 123-4567", "⬅️ Back to Menu"],
   },
   "📅 Book Appointment": {
     message: "Great! Send us a WhatsApp message and we'll confirm your slot 🐾",
@@ -122,7 +122,7 @@ export const CHATBOT_FLOWS = {
     options: [],
     action: "maps",
   },
-  "📞 (555) 123-4567": {
+  "📞 +1 (555) 123-4567": {
     message: "Calling now! 📞",
     options: [],
     action: "call",

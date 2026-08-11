@@ -174,7 +174,7 @@ export default function Gallery() {
             Want to see what&apos;s available right now?
           </p>
           <a
-            href="https://wa.me/916382469764?text=Hi!%20I%20saw%20your%20website%20and%20wanted%20to%20know%20about%20available%20pets%20🐾"
+            href="https://wa.me/15551234567?text=Hi!%20I%20saw%20your%20website%20and%20wanted%20to%20know%20about%20available%20pets%20🐾"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-linear-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-8 py-3 rounded-full font-700 transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-xl shadow-green-200 active:scale-95 relative overflow-hidden group"
