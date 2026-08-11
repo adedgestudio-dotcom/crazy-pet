@@ -27,7 +27,7 @@ const cutePets = [
   {
     id: 4,
     image:
-      "https://images.unsplash.com/photo-1573865526739-10c1dd7aa1f0?w=500&q=80",
+      "https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=500&q=80",
     name: "British Shorthair",
     badge: "Calm",
   },
